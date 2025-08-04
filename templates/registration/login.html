@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block nav %}
+    <a href="{% url 'index' %}">Index Page</a>
+    <a href="{% url 'register' %}">Register</a>
+{% endblock %}
+
+{% block content %}
+  <div class="login-form">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Log in</button>
+    </form>
+    <p>Нямаш акаунт? <a href="{% url 'register' %}">Регистрирай се</a></p>
+  </div>
+{% endblock %}

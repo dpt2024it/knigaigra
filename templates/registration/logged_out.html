@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    <a href="{% url 'index' %}">Index Page</a>
+    <a href="{% url 'login' %}">Login</a>
+{% endblock %}
+
+{% block content %}
+  <p>Успешно излязохте от системата.</p>
+  <a href="{% url 'login' %}">Влез отново</a>
+{% endblock %}

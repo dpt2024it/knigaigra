@@ -1,7 +1,7 @@
 """
-URL configuration for knigaigra project.
+URL configuration for a knigaigra project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The `urlpatterns` list routes URLs to views. For more information, please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
 Examples:
 Function views
@@ -16,8 +16,11 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('', include('common.urls')),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
